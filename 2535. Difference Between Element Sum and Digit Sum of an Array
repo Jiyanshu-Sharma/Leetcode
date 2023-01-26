@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int differenceOfSum(vector<int>& nums) {
+         int len = sizeof(nums);
+        int sum1 =0 , sum2 =0;
+        for(int i = 0 ; i <len;i++)
+        {
+            sum1 = sum1+nums[i];
+            if(nums[i]<9)
+            {
+                sum2 = sum2+nums[i];
+            }
+            else 
+            {
+                int a = nums[i];
+                while(a != 0)
+                {
+                    sum2 = sum2 + a%10;
+                    a = a/10;
+                }
+                
+            }
+        }
+        return sum1-sum2;
+        
+        
+    }
+};
